@@ -39,6 +39,8 @@
   .vtag{display:inline-block;font-weight:800;font-size:13px;padding:7px 16px;border-radius:999px;background:rgba(227,160,8,.14);color:var(--gold);border:1px solid rgba(227,160,8,.3)}
   .verdict h2{font-size:clamp(21px,3.6vw,27px);margin:16px 0 6px;font-weight:800}
   .verdict p{color:var(--muted);max-width:580px;margin:0 auto;font-size:15px}
+  .verdict-goal{background:linear-gradient(180deg,var(--bg2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;font-size:14.5px;line-height:1.65;color:var(--muted)}
+  .verdict-goal b{color:var(--gold)}
 
   .spotlight{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;
     background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin-top:16px}
@@ -163,7 +165,7 @@
   </div>
 
   <div class="spotlight an">
-    <div class="gauge fire">4,9<small>секунди на телефоні</small></div>
+    <div class="gauge fire">4,7<small>секунди на телефоні</small></div>
     <div class="txt">
       <h3>Стільки чекає відвідувач зі смартфона</h3>
       <p>Поки з'явиться головний вміст сторінки. Комфортна межа — <b>до 3 секунд</b>. Кожна зайва секунда = покупці, які закривають вкладку.</p>
@@ -183,17 +185,17 @@
   <!-- ПАНЕЛЬ: ТЕЛЕФОН -->
   <div class="pane active" id="pane-m">
     <div class="strip">
-      <div class="chip"><div class="n" style="color:#e3a008">76</div><div class="t">ШВИДКІСТЬ</div></div>
+      <div class="chip"><div class="n" style="color:#e3a008">72</div><div class="t">ШВИДКІСТЬ</div></div>
       <div class="chip"><div class="n" style="color:#3fb950">98</div><div class="t">ЗРУЧНІСТЬ</div></div>
       <div class="chip"><div class="n" style="color:#3fb950">92</div><div class="t">GOOGLE SEO</div></div>
       <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">ЯКІСТЬ</div></div>
     </div>
     <div class="grid3">
-      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot r"></span></div><div class="val">4,9 с</div><div class="norm">норма: до 2,5 с</div></div>
-      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot r"></span></div><div class="val">3,0 с</div><div class="norm">норма: до 1,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot g"></span></div><div class="val">3,1 с</div><div class="norm">норма: до 3,4 с</div></div>
-      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot a"></span></div><div class="val">4,9 с</div><div class="norm">норма: до 3,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">89 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot r"></span></div><div class="val">4,7 с</div><div class="norm">норма: до 2,5 с</div></div>
+      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot r"></span></div><div class="val">3,6 с</div><div class="norm">норма: до 1,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot a"></span></div><div class="val">4,8 с</div><div class="norm">норма: до 3,4 с</div></div>
+      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot a"></span></div><div class="val">4,7 с</div><div class="norm">норма: до 3,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">104 мс</div><div class="norm">норма: до 200 мс</div></div>
       <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
     </div>
   </div>
@@ -207,23 +209,35 @@
       <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">ЯКІСТЬ</div></div>
     </div>
     <div class="grid3">
-      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot g"></span></div><div class="val">1,0 с</div><div class="norm">норма: до 2,5 с</div></div>
+      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot g"></span></div><div class="val">0,9 с</div><div class="norm">норма: до 2,5 с</div></div>
       <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot g"></span></div><div class="val">0,8 с</div><div class="norm">норма: до 1,8 с</div></div>
       <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot g"></span></div><div class="val">0,8 с</div><div class="norm">норма: до 3,4 с</div></div>
-      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot g"></span></div><div class="val">1,0 с</div><div class="norm">норма: до 3,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">56 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot g"></span></div><div class="val">0,9 с</div><div class="norm">норма: до 3,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">6 мс</div><div class="norm">норма: до 200 мс</div></div>
       <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
     </div>
   </div>
 
   <!-- ОСОБЛИВОСТІ -->
+  <h4 class="sec">📖 Що означає кожен показник</h4>
+  <div class="sec-sub">Коротко, людською мовою — щоб цифри вище були зрозумілі.</div>
+  <div class="mean">
+    <div class="row"><div class="ic">🖼️</div><div><b>Головний контент (LCP)</b><span>Коли з'являється найбільший елемент сторінки (фото/банер). Головний показник «швидко відкрився чи ні».</span></div></div>
+    <div class="row"><div class="ic">⚡</div><div><b>Перша поява (FCP)</b><span>Коли видно перший текст/елемент — сайт «почав показуватись».</span></div></div>
+    <div class="row"><div class="ic">🧱</div><div><b>Стабільність (CLS)</b><span>Чи «стрибає» верстка при завантаженні. 0 = ідеально стабільно.</span></div></div>
+    <div class="row"><div class="ic">📱</div><div><b>Чому телефон повільніший</b><span>Google навмисно міряє на слабкому телефоні + повільній 4G — це «найгірший випадок». На нормальному інтернеті сайт швидший, але <b>до норми все одно треба тягнутись</b> — бо частина клієнтів саме на слабкому зв'язку.</span></div></div>
+  </div>
+
+  <h4 class="sec">🎯 Скільки треба досягти</h4>
+  <div class="verdict-goal"><b>Норма Google (ціль):</b> головний контент — за <b>≤ 2,5 с</b>, перша поява — за <b>≤ 1,8 с</b>, без стрибків верстки (CLS <b>≤ 0,1</b>).<br><br><b>Ваш сайт на телефоні:</b> головний контент за <b>4,7 с</b> — є куди рости.<br><br>Орієнтир — <b>зелена зона Google</b>. До неї варто тягнутись: швидкість прямо впливає на те, скільки відвідувачів стають покупцями.</div>
+
   <h4 class="sec">🔧 Що всередині сайту</h4>
   <div class="sec-sub">Технічні характеристики, що впливають на швидкість.</div>
   <div class="diag">
-    <div class="d"><div class="dnum">1,9 МБ</div><div class="dl">вага сторінки</div></div>
+    <div class="d"><div class="dnum">1,2 МБ</div><div class="dl">вага сторінки</div></div>
     <div class="d"><div class="dnum">21</div><div class="dl">звернень до сервера</div></div>
     <div class="d"><div class="dnum" style="color:#3fb950">0,0 с</div><div class="dl">відповідь сервера</div></div>
-    <div class="d"><div class="dnum">0,2 с</div><div class="dl">завантаження скриптів</div></div>
+    <div class="d"><div class="dnum">0,3 с</div><div class="dl">завантаження скриптів</div></div>
   </div>
 
   <h4 class="sec">💬 Що це означає для бізнесу</h4>

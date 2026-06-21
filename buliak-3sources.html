@@ -55,6 +55,15 @@
   .why .ic{font-size:20px;flex-shrink:0}
   .why b{display:block;margin-bottom:2px}
   .why span{color:var(--muted);font-size:14px}
+  .goalbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-top:6px}
+  .goal{margin-bottom:20px}.goal:last-child{margin-bottom:0}
+  .goal-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;font-size:14px;flex-wrap:wrap;gap:4px}
+  .goal-head b{font-size:14.5px}.goal-head .tg{color:var(--green);font-size:13px}
+  .bar{position:relative;height:26px;border-radius:8px;overflow:hidden;display:flex}
+  .bar .zg{background:rgba(63,185,80,.32)}.bar .za{background:rgba(227,160,8,.28)}.bar .zr{background:rgba(248,81,73,.28)}
+  .bar .range{position:absolute;top:0;height:100%;background:repeating-linear-gradient(45deg,rgba(245,166,35,.55),rgba(245,166,35,.55) 5px,rgba(245,166,35,.35) 5px,rgba(245,166,35,.35) 10px);border-left:2px solid var(--gold);border-right:2px solid var(--gold)}
+  .barlab{display:flex;justify-content:space-between;font-size:10.5px;color:#6f6a7d;margin-top:5px}
+  .goal-note{font-size:13px;color:var(--muted);margin-top:8px}
   .verdict{background:linear-gradient(180deg,var(--bg2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-top:14px;font-size:15px}
   .verdict b{color:var(--gold)}
   footer{text-align:center;color:var(--muted);font-size:13px;margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
@@ -142,6 +151,29 @@
         <div class="meth">Реальні дані живих відвідувачів Chrome за 28 днів.</div>
         <div class="nodata">📭 Недостатньо реальних даних<br><br>Замало відвідувачів для статистики (для малих сайтів — норма)</div>
       </div>
+    </div>
+  </div>
+
+  <h2>🎯 Скільки треба досягти</h2>
+  <div class="sec-sub">🟩 зелена зона = ціль Google. Смуга = розкид наших 3 джерел (всі заміри).</div>
+  <div class="goalbox">
+    <div class="goal">
+      <div class="goal-head"><b>Головний контент (LCP)</b><span class="tg">ціль: до 2,5 с</span></div>
+      <div class="bar"><div class="zg" style="width:25%"></div><div class="za" style="width:15%"></div><div class="zr" style="width:60%"></div><div class="range" style="left:7.5%;width:90.5%"></div></div>
+      <div class="barlab"><span>0 с</span><span>2,5</span><span>4</span><span>10 с+</span></div>
+      <div class="goal-note">Наш розкид: <b>0,75–9,8 с</b>. У зеленій зоні на нормальній мережі, вилітає на поганій 4G.</div>
+    </div>
+    <div class="goal">
+      <div class="goal-head"><b>Перша поява (FCP)</b><span class="tg">ціль: до 1,8 с</span></div>
+      <div class="bar"><div class="zg" style="width:36%"></div><div class="za" style="width:24%"></div><div class="zr" style="width:40%"></div><div class="range" style="left:14%;width:80%"></div></div>
+      <div class="barlab"><span>0 с</span><span>1,8</span><span>3</span><span>5 с+</span></div>
+      <div class="goal-note">Наш розкид: <b>0,7–4,7 с</b>. Ціль досягається на нормальних умовах.</div>
+    </div>
+    <div class="goal">
+      <div class="goal-head"><b>Стабільність верстки (CLS)</b><span class="tg">ціль: до 0,1</span></div>
+      <div class="bar"><div class="zg" style="width:25%"></div><div class="za" style="width:37.5%"></div><div class="zr" style="width:37.5%"></div><div class="range" style="left:0%;width:82%"></div></div>
+      <div class="barlab"><span>0</span><span>0,1</span><span>0,25</span><span>0,4+</span></div>
+      <div class="goal-note">Наш розкид: <b>0–0,33</b>. На телефоні ідеально (0), на десктопі стрибає (0,33) — є що підтягнути.</div>
     </div>
   </div>
 

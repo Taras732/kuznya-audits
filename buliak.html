@@ -7,94 +7,96 @@
 <title>Аудит сайту — Буляк · Кузня</title>
 <style>
   :root{
-    --bg:#0c0b0f; --bg2:#15131a; --card:#1a1822; --line:#2b2833;
+    --bg:#0c0b0f; --bg2:#15131a; --card:#1a1822; --card2:#211e2b; --line:#2b2833;
     --txt:#f3f0ea; --muted:#a09aae; --fire1:#ff7a18; --fire2:#ff3d2e;
-    --gold:#f5a623; --green:#3fb950; --amber:#e3a008; --red:#f85149;
-    --r:18px;
+    --gold:#f5a623; --green:#3fb950; --amber:#e3a008; --red:#f85149; --r:18px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:radial-gradient(1200px 600px at 50% -200px,#241a14 0%,var(--bg) 55%);
+  body{background:radial-gradient(1200px 600px at 50% -200px,#241a14 0%,var(--bg) 55%);
     color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
-    line-height:1.55;-webkit-font-smoothing:antialiased;padding:0 18px 80px;
-  }
-  .wrap{max-width:840px;margin:0 auto}
+    line-height:1.55;-webkit-font-smoothing:antialiased;padding:0 18px 80px}
+  .wrap{max-width:880px;margin:0 auto}
   .fire{background:linear-gradient(100deg,var(--gold),var(--fire1) 55%,var(--fire2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .an{animation:rise .5s ease both}
 
-  /* header */
   header{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:1px solid var(--line)}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;font-size:18px}
   .anvil{width:26px;height:26px;filter:drop-shadow(0 0 8px rgba(255,122,24,.5))}
   .badge-free{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
 
-  /* hero */
-  .hero{text-align:center;padding:54px 0 30px}
+  .hero{text-align:center;padding:50px 0 26px}
   .kicker{text-transform:uppercase;letter-spacing:3px;font-size:12px;color:var(--gold);margin-bottom:14px}
-  .hero h1{font-size:clamp(30px,6vw,46px);font-weight:850;line-height:1.08;letter-spacing:-.5px}
+  .hero h1{font-size:clamp(28px,5.6vw,44px);font-weight:850;line-height:1.08;letter-spacing:-.5px}
   .hero .site{margin-top:16px;color:var(--muted);font-size:15px}
   .hero .site a{color:var(--txt);text-decoration:none;border-bottom:1px dashed var(--line)}
 
-  /* verdict */
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center}
+  .chip .n{font-size:26px;font-weight:850;line-height:1}
+  .chip .t{font-size:11.5px;color:var(--muted);margin-top:6px;letter-spacing:.3px}
+
   .verdict{background:linear-gradient(180deg,var(--bg2),var(--card));border:1px solid var(--line);
-    border-radius:var(--r);padding:28px;margin-top:30px;text-align:center;position:relative;overflow:hidden}
+    border-radius:var(--r);padding:26px;margin-top:18px;text-align:center;position:relative;overflow:hidden}
   .verdict::before{content:"";position:absolute;inset:-2px;background:radial-gradient(400px 120px at 50% 0,rgba(255,122,24,.18),transparent);pointer-events:none}
   .vtag{display:inline-block;font-weight:800;font-size:13px;padding:7px 16px;border-radius:999px;background:rgba(227,160,8,.14);color:var(--gold);border:1px solid rgba(227,160,8,.3)}
-  .verdict h2{font-size:clamp(22px,4vw,28px);margin:16px 0 6px;font-weight:800}
-  .verdict p{color:var(--muted);max-width:560px;margin:0 auto;font-size:15px}
+  .verdict h2{font-size:clamp(21px,3.6vw,27px);margin:16px 0 6px;font-weight:800}
+  .verdict p{color:var(--muted);max-width:580px;margin:0 auto;font-size:15px}
 
-  /* big number */
   .spotlight{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;
-    background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin-top:18px}
-  .gauge{font-size:clamp(46px,11vw,68px);font-weight:850;line-height:1}
+    background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin-top:16px}
+  .gauge{font-size:clamp(44px,10vw,64px);font-weight:850;line-height:1}
   .gauge small{display:block;font-size:14px;color:var(--muted);font-weight:600;margin-top:4px}
   .spotlight .txt h3{font-size:18px;margin-bottom:6px}
   .spotlight .txt p{color:var(--muted);font-size:14.5px}
 
-  /* bento cards */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;transition:transform .2s,border-color .2s}
-  .card:hover{transform:translateY(-3px);border-color:#3a3647}
-  .card .lbl{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
-  .dot{width:9px;height:9px;border-radius:50%}
+  h4.sec{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin:40px 0 6px;font-weight:700}
+  .sec-sub{color:var(--muted);font-size:13.5px;margin-bottom:16px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  .m{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;transition:transform .2s,border-color .2s;position:relative}
+  .m:hover{transform:translateY(-3px);border-color:#3a3647}
+  .m .top{display:flex;align-items:center;justify-content:space-between}
+  .m .name{font-size:13px;color:var(--muted)}
+  .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
   .g{background:var(--green)}.a{background:var(--amber)}.r{background:var(--red)}
-  .card .val{font-size:34px;font-weight:850;margin-top:8px}
-  .card .sub{font-size:13px;color:var(--muted);margin-top:2px}
+  .m .val{font-size:30px;font-weight:850;margin-top:10px;line-height:1}
+  .m .norm{font-size:12px;color:#6f6a7d;margin-top:6px}
 
-  h4.sec{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin:38px 0 14px;font-weight:700}
+  .deskline{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:14px;
+    background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.25);border-radius:12px;padding:11px 16px;font-size:14px;color:#cfe8d4}
 
-  /* meaning list */
-  .mean{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 4px}
+  .diag{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+  .d{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+  .d .dv{font-size:24px;font-weight:850}
+  .d .dl{font-size:12px;color:var(--muted);margin-top:5px}
+
+  .mean{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 4px;margin-top:6px}
   .mean .row{display:flex;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line)}
   .mean .row:last-child{border-bottom:0}
   .mean .ic{font-size:20px;flex-shrink:0}
   .mean .row b{display:block;margin-bottom:2px}
   .mean .row span{color:var(--muted);font-size:14.5px}
 
-  /* verify */
   .verify{background:linear-gradient(180deg,var(--bg2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:26px;margin-top:18px}
   .verify h3{font-size:18px;margin-bottom:10px}
   .verify p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
-  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:14.5px;text-decoration:none;
-    padding:13px 20px;border-radius:12px;transition:transform .15s,box-shadow .2s}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:14.5px;text-decoration:none;padding:13px 20px;border-radius:12px;transition:transform .15s,box-shadow .2s}
   .btn-ghost{color:var(--txt);border:1px solid var(--line);background:#0e0d12}
   .btn-ghost:hover{border-color:var(--gold);transform:translateY(-2px)}
 
-  /* CTA */
-  .cta{text-align:center;margin-top:44px;padding:40px 24px;background:
-    radial-gradient(500px 200px at 50% 0,rgba(255,61,46,.16),transparent),var(--card);
-    border:1px solid var(--line);border-radius:var(--r)}
+  .cta{text-align:center;margin-top:44px;padding:40px 24px;background:radial-gradient(500px 200px at 50% 0,rgba(255,61,46,.16),transparent),var(--card);border:1px solid var(--line);border-radius:var(--r)}
   .cta h2{font-size:clamp(22px,4vw,30px);font-weight:850;margin-bottom:10px}
   .cta p{color:var(--muted);margin-bottom:22px}
-  .btn-fire{background:linear-gradient(100deg,var(--fire1),var(--fire2));color:#fff;font-size:16px;padding:15px 28px;
-    box-shadow:0 8px 30px rgba(255,61,46,.35)}
+  .btn-fire{background:linear-gradient(100deg,var(--fire1),var(--fire2));color:#fff;font-size:16px;padding:15px 28px;box-shadow:0 8px 30px rgba(255,61,46,.35)}
   .btn-fire:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(255,61,46,.5)}
 
   footer{text-align:center;color:var(--muted);font-size:13px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line)}
   footer a{color:var(--gold);text-decoration:none}
-  .disc{font-size:12px;color:#6f6a7d;margin-top:10px;max-width:560px;margin-left:auto;margin-right:auto}
+  .disc{font-size:12px;color:#6f6a7d;margin-top:10px;max-width:580px;margin-left:auto;margin-right:auto}
 
-  @media(max-width:560px){.grid{grid-template-columns:1fr}.spotlight{grid-template-columns:1fr;text-align:center}}
+  @media(max-width:620px){.grid3,.diag{grid-template-columns:repeat(2,1fr)}.strip{grid-template-columns:repeat(2,1fr)}.spotlight{grid-template-columns:1fr;text-align:center}}
 </style>
 </head>
 <body>
@@ -108,54 +110,58 @@
     <span class="badge-free">Безкоштовний аудит сайту</span>
   </header>
 
-  <section class="hero">
+  <section class="hero an">
     <div class="kicker">Експрес-аналіз сайту</div>
-    <h1>Наскільки швидкий і зручний<br>сайт <span class="fire">Буляк</span>?</h1>
-    <div class="site">Аналіз сайту <a href="https://buliak.com" target="_blank" rel="noopener">buliak.com</a> · 21 червня 2026</div>
+    <h1>Дашборд швидкості сайту<br><span class="fire">Буляк</span></h1>
+    <div class="site">Аналіз <a href="https://buliak.com" target="_blank" rel="noopener">buliak.com</a> · 21 червня 2026 · на основі Google PageSpeed</div>
+
+    <div class="strip">
+      <div class="chip"><div class="n" style="color:var(--amber)">62</div><div class="t">ШВИДКІСТЬ 📱</div></div>
+      <div class="chip"><div class="n" style="color:var(--green)">93</div><div class="t">ЗРУЧНІСТЬ</div></div>
+      <div class="chip"><div class="n" style="color:var(--green)">100</div><div class="t">GOOGLE SEO</div></div>
+      <div class="chip"><div class="n" style="color:var(--green)">100</div><div class="t">ЯКІСТЬ</div></div>
+    </div>
   </section>
 
-  <div class="verdict">
+  <div class="verdict an">
     <span class="vtag">🟡 ПОТРІБНЕ ПОКРАЩЕННЯ</span>
-    <h2>Сайт зроблено добре — але він повільний на телефоні</h2>
-    <p>Технічно все на висоті: Google ставить вам <b>100 зі 100</b> за пошукову видимість і безпеку.
-       Слабке місце одне — на смартфоні сайт відкривається надто довго, і частина клієнтів не дочікується.</p>
+    <h2>Сайт зроблено добре — але повільний на телефоні</h2>
+    <p>Технічно все на висоті: Google ставить <b>100/100</b> за пошукову видимість і якість.
+       Слабке місце одне — мобільна швидкість, і саме там ви втрачаєте частину клієнтів.</p>
   </div>
 
-  <div class="spotlight">
+  <div class="spotlight an">
     <div class="gauge fire">6,5<small>секунди на телефоні</small></div>
     <div class="txt">
       <h3>Стільки чекає відвідувач зі смартфона</h3>
-      <p>Поки з'явиться головний вміст сторінки. Комфортна межа — <b>до 3 секунд</b>. Кожна зайва секунда = втрачені покупці, які просто закривають вкладку.</p>
+      <p>Поки з'явиться головний вміст сторінки. Комфортна межа — <b>до 3 секунд</b>. Кожна зайва секунда = покупці, які закривають вкладку.</p>
     </div>
   </div>
 
-  <h4 class="sec">Оцінка за 4 напрямками</h4>
-  <div class="grid">
-    <div class="card">
-      <div class="lbl"><span class="dot a"></span>Швидкість (телефон)</div>
-      <div class="val">62<span style="font-size:16px;color:var(--muted)">/100</span></div>
-      <div class="sub">на комп'ютері — 94, тут усе добре</div>
-    </div>
-    <div class="card">
-      <div class="lbl"><span class="dot g"></span>Зручність для людей</div>
-      <div class="val">93<span style="font-size:16px;color:var(--muted)">/100</span></div>
-      <div class="sub">сайт зручний у користуванні</div>
-    </div>
-    <div class="card">
-      <div class="lbl"><span class="dot g"></span>Видимість у Google</div>
-      <div class="val">100<span style="font-size:16px;color:var(--muted)">/100</span></div>
-      <div class="sub">бездоганно — Google вас бачить</div>
-    </div>
-    <div class="card">
-      <div class="lbl"><span class="dot g"></span>Технічна якість</div>
-      <div class="val">100<span style="font-size:16px;color:var(--muted)">/100</span></div>
-      <div class="sub">сучасні стандарти дотримані</div>
-    </div>
+  <h4 class="sec">⚡ Детальні показники швидкості (телефон)</h4>
+  <div class="sec-sub">Шість ключових метрик, за якими Google оцінює досвід відвідувача.</div>
+  <div class="grid3">
+    <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot r"></span></div><div class="val">6,5 с</div><div class="norm">норма: до 2,5 с</div></div>
+    <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot a"></span></div><div class="val">3,2 с</div><div class="norm">норма: до 1,8 с</div></div>
+    <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot a"></span></div><div class="val">4,2 с</div><div class="norm">норма: до 3,4 с</div></div>
+    <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot r"></span></div><div class="val">8,8 с</div><div class="norm">норма: до 3,8 с</div></div>
+    <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">60 мс</div><div class="norm">норма: до 200 мс ✓</div></div>
+    <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot a"></span></div><div class="val">0,16</div><div class="norm">норма: до 0,1</div></div>
+  </div>
+  <div class="deskline">💻 На комп'ютері все добре: головний контент за 1,3 с, усі показники в зеленій зоні.</div>
+
+  <h4 class="sec">🔧 Що всередині сайту</h4>
+  <div class="sec-sub">Технічні характеристики, що впливають на швидкість завантаження.</div>
+  <div class="diag">
+    <div class="d"><div class="dv">1,3 МБ</div><div class="dl">вага сторінки</div></div>
+    <div class="d"><div class="dv">54</div><div class="dl">звернень до сервера</div></div>
+    <div class="d"><div class="dv" style="color:var(--green)">0,11 с</div><div class="dl">відповідь сервера ✓</div></div>
+    <div class="d"><div class="dv">0,5 с</div><div class="dl">завантаження скриптів</div></div>
   </div>
 
-  <h4 class="sec">Що це означає для вашого бізнесу</h4>
+  <h4 class="sec">💬 Що це означає для вашого бізнесу</h4>
   <div class="mean">
-    <div class="row"><div class="ic">📱</div><div><b>Більшість покупців — зі смартфона</b><span>А саме там сайт «думає» 6–7 секунд, перш ніж стане готовим до покупки.</span></div></div>
+    <div class="row"><div class="ic">📱</div><div><b>Більшість покупців — зі смартфона</b><span>А саме там сайт «думає» 6–9 секунд, перш ніж стане готовим до покупки.</span></div></div>
     <div class="row"><div class="ic">📉</div><div><b>Повільність = втрачені продажі</b><span>За даними Google, затримка з 1 до 3 секунд підвищує ймовірність відмови на ~32%.</span></div></div>
     <div class="row"><div class="ic">🧱</div><div><b>Верстка трохи «стрибає» під час завантаження</b><span>Користувач промахується по кнопках — дрібниця, що дратує саме на телефоні.</span></div></div>
     <div class="row"><div class="ic">✅</div><div><b>Добра новина: фундамент здоровий</b><span>Виправляється точково, за кілька днів, без переробки сайту й без зміни платформи.</span></div></div>
@@ -164,9 +170,7 @@
   <div class="verify">
     <h3>🔎 Не вірте нам на слово — перевірте самі</h3>
     <p>Ці цифри ми не вигадали. Це публічний інструмент <b>Google PageSpeed Insights</b> — той самий, яким користуються розробники в усьому світі. Натисніть і подивіться результат свого сайту наживо:</p>
-    <a class="btn btn-ghost" href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fbuliak.com&form_factor=mobile" target="_blank" rel="noopener">
-      ⚡ Відкрити перевірку в Google →
-    </a>
+    <a class="btn btn-ghost" href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fbuliak.com&form_factor=mobile" target="_blank" rel="noopener">⚡ Відкрити перевірку в Google →</a>
   </div>
 
   <div class="cta">

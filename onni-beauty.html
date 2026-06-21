@@ -139,12 +139,11 @@
 
   @media(max-width:620px){.grid3,.diag{grid-template-columns:repeat(2,1fr)}.strip{grid-template-columns:repeat(2,1fr)}.spotlight{grid-template-columns:1fr;text-align:center}}
   @media print{
-    .an{opacity:1!important;animation:none!important;transform:none!important}
-    .pane{display:block!important;opacity:1!important;animation:none!important;transform:none!important}
-    .tabwrap{display:none}
-    .pane#pane-d::before{content:"💻 Комп'ютер";display:block;color:var(--gold);font-weight:700;margin:24px 0 10px;letter-spacing:1px}
-    .pane#pane-m::before{content:"📱 Телефон";display:block;color:var(--gold);font-weight:700;margin:8px 0 10px;letter-spacing:1px}
-    .m:hover,.card:hover,.chip:hover{transform:none}
+    *{opacity:1!important;animation:none!important;transform:none!important;visibility:visible!important}
+    .pane{display:block!important}
+    .tabwrap{display:none!important}
+    #pane-d::before{content:"💻 Комп'ютер";display:block;color:var(--gold);font-weight:700;margin:24px 0 10px;letter-spacing:1px}
+    #pane-m::before{content:"📱 Телефон";display:block;color:var(--gold);font-weight:700;margin:8px 0 10px;letter-spacing:1px}
   }
 </style>
 </head>
@@ -200,10 +199,10 @@
     </div>
     <div class="grid3">
       <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot r"></span></div><div class="val">4,7 с</div><div class="norm">норма: до 2,5 с</div></div>
-      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot r"></span></div><div class="val">3,5 с</div><div class="norm">норма: до 1,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot r"></span></div><div class="val">3,6 с</div><div class="norm">норма: до 1,8 с</div></div>
       <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot a"></span></div><div class="val">4,8 с</div><div class="norm">норма: до 3,4 с</div></div>
       <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot a"></span></div><div class="val">4,7 с</div><div class="norm">норма: до 3,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">108 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">73 мс</div><div class="norm">норма: до 200 мс</div></div>
       <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
     </div>
   </div>
@@ -218,10 +217,10 @@
     </div>
     <div class="grid3">
       <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot g"></span></div><div class="val">1,2 с</div><div class="norm">норма: до 2,5 с</div></div>
-      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot g"></span></div><div class="val">0,9 с</div><div class="norm">норма: до 1,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot g"></span></div><div class="val">0,9 с</div><div class="norm">норма: до 3,4 с</div></div>
+      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot g"></span></div><div class="val">0,8 с</div><div class="norm">норма: до 1,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot g"></span></div><div class="val">0,8 с</div><div class="norm">норма: до 3,4 с</div></div>
       <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot g"></span></div><div class="val">1,2 с</div><div class="norm">норма: до 3,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">59 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">47 мс</div><div class="norm">норма: до 200 мс</div></div>
       <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
     </div>
   </div>
@@ -245,7 +244,7 @@
     <div class="d"><div class="dnum">1,2 МБ</div><div class="dl">вага сторінки</div></div>
     <div class="d"><div class="dnum">21</div><div class="dl">звернень до сервера</div></div>
     <div class="d"><div class="dnum" style="color:#3fb950">0,0 с</div><div class="dl">відповідь сервера</div></div>
-    <div class="d"><div class="dnum">0,3 с</div><div class="dl">завантаження скриптів</div></div>
+    <div class="d"><div class="dnum">0,2 с</div><div class="dl">завантаження скриптів</div></div>
   </div>
 
   <h4 class="sec">💬 Що це означає для бізнесу</h4>

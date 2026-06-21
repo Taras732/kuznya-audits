@@ -16,7 +16,7 @@
   body{background:radial-gradient(1200px 600px at 50% -200px,#241a14 0%,var(--bg) 55%);
     color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
     line-height:1.55;-webkit-font-smoothing:antialiased;padding:0 18px 80px}
-  .wrap{max-width:880px;margin:0 auto}
+  .wrap{max-width:840px;margin:0 auto}
   .fire{background:linear-gradient(100deg,var(--gold),var(--fire1) 55%,var(--fire2));-webkit-background-clip:text;background-clip:text;color:transparent}
   @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
   .an{animation:rise .5s ease both}
@@ -26,20 +26,13 @@
   .anvil{width:26px;height:26px;filter:drop-shadow(0 0 8px rgba(255,122,24,.5))}
   .badge-free{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
 
-  .hero{text-align:center;padding:50px 0 26px}
+  .hero{text-align:center;padding:48px 0 22px}
   .kicker{text-transform:uppercase;letter-spacing:3px;font-size:12px;color:var(--gold);margin-bottom:14px}
   .hero h1{font-size:clamp(28px,5.6vw,44px);font-weight:850;line-height:1.08;letter-spacing:-.5px}
   .hero .site{margin-top:16px;color:var(--muted);font-size:15px}
   .hero .site a{color:var(--txt);text-decoration:none;border-bottom:1px dashed var(--line)}
 
-  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
-  .chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 8px;text-align:center}
-  .chip .t{font-size:11px;color:var(--muted);letter-spacing:.3px;margin-bottom:8px}
-  .chip .duo{display:flex;justify-content:center;gap:12px;align-items:baseline}
-  .chip .pv{font-size:23px;font-weight:850;line-height:1}
-  .chip .dv{font-size:15px;font-weight:700;color:var(--muted)}
-  .chip i{font-style:normal;font-size:11px;opacity:.7;margin-right:2px}
-
+  /* ===== ЗАГАЛЬНЕ ===== */
   .verdict{background:linear-gradient(180deg,var(--bg2),var(--card));border:1px solid var(--line);
     border-radius:var(--r);padding:26px;margin-top:18px;text-align:center;position:relative;overflow:hidden}
   .verdict::before{content:"";position:absolute;inset:-2px;background:radial-gradient(400px 120px at 50% 0,rgba(255,122,24,.18),transparent);pointer-events:none}
@@ -54,21 +47,34 @@
   .spotlight .txt h3{font-size:18px;margin-bottom:6px}
   .spotlight .txt p{color:var(--muted);font-size:14.5px}
 
-  h4.sec{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin:40px 0 6px;font-weight:700}
-  .sec-sub{color:var(--muted);font-size:13.5px;margin-bottom:16px}
+  h4.sec{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin:42px 0 6px;font-weight:700;text-align:center}
+  .sec-sub{color:var(--muted);font-size:13.5px;margin-bottom:18px;text-align:center}
 
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  /* ===== ТАБИ ===== */
+  .tabwrap{text-align:center}
+  .tabs{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:5px;gap:4px}
+  .tab{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:15px;padding:11px 26px;border-radius:10px;cursor:pointer;transition:.2s;font-family:inherit}
+  .tab:hover{color:var(--txt)}
+  .tab.active{background:linear-gradient(100deg,var(--fire1),var(--fire2));color:#fff;box-shadow:0 6px 20px rgba(255,61,46,.3)}
+  .pane{display:none;animation:rise .35s ease both}
+  .pane.active{display:block}
+
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:20px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 8px;text-align:center}
+  .chip .n{font-size:30px;font-weight:850;line-height:1}
+  .chip .t{font-size:11px;color:var(--muted);margin-top:8px;letter-spacing:.4px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:13px}
   .m{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;transition:transform .2s,border-color .2s}
   .m:hover{transform:translateY(-3px);border-color:#3a3647}
-  .m .name{font-size:13px;color:var(--muted);margin-bottom:12px}
-  .m .duo{display:flex;gap:16px;align-items:baseline}
-  .m .leg{display:flex;align-items:center;gap:6px}
-  .m .leg i{font-style:normal;font-size:12px;opacity:.7}
-  .m .leg .num{font-size:23px;font-weight:850}
-  .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;display:inline-block}
+  .m .top{display:flex;align-items:center;justify-content:space-between}
+  .m .name{font-size:13px;color:var(--muted)}
+  .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
   .g{background:var(--green)}.a{background:var(--amber)}.r{background:var(--red)}
-  .m .norm{font-size:12px;color:#6f6a7d;margin-top:10px}
+  .m .val{font-size:30px;font-weight:850;margin-top:10px;line-height:1}
+  .m .norm{font-size:12px;color:#6f6a7d;margin-top:6px}
 
+  /* ===== ОСОБЛИВОСТІ ===== */
   .diag{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
   .d{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
   .d .dnum{font-size:24px;font-weight:850}
@@ -96,7 +102,6 @@
 
   footer{text-align:center;color:var(--muted);font-size:13px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line)}
   footer a{color:var(--gold);text-decoration:none}
-  .disc{font-size:12px;color:#6f6a7d;margin-top:10px;max-width:580px;margin-left:auto;margin-right:auto}
 
   @media(max-width:620px){.grid3,.diag{grid-template-columns:repeat(2,1fr)}.strip{grid-template-columns:repeat(2,1fr)}.spotlight{grid-template-columns:1fr;text-align:center}}
 </style>
@@ -114,17 +119,11 @@
 
   <section class="hero an">
     <div class="kicker">Експрес-аналіз сайту</div>
-    <h1>Дашборд швидкості сайту<br><span class="fire">Буляк</span></h1>
+    <h1>Аудит сайту<br><span class="fire">Буляк</span></h1>
     <div class="site">Аналіз <a href="https://buliak.com" target="_blank" rel="noopener">buliak.com</a> · 21 червня 2026 · на основі Google PageSpeed</div>
-
-    <div class="strip">
-      <div class="chip"><div class="t">ШВИДКІСТЬ</div><div class="duo"><span class="pv" style="color:#e3a008"><i>📱</i>61</span><span class="dv"><i>💻</i>80</span></div></div>
-      <div class="chip"><div class="t">ЗРУЧНІСТЬ</div><div class="duo"><span class="pv" style="color:#3fb950"><i>📱</i>93</span><span class="dv"><i>💻</i>95</span></div></div>
-      <div class="chip"><div class="t">GOOGLE SEO</div><div class="duo"><span class="pv" style="color:#3fb950"><i>📱</i>100</span><span class="dv"><i>💻</i>100</span></div></div>
-      <div class="chip"><div class="t">ЯКІСТЬ</div><div class="duo"><span class="pv" style="color:#3fb950"><i>📱</i>100</span><span class="dv"><i>💻</i>100</span></div></div>
-    </div>
   </section>
 
+  <!-- ЗАГАЛЬНИЙ ВИСНОВОК -->
   <div class="verdict an">
     <span class="vtag">🟡 ПОТРІБНЕ ПОКРАЩЕННЯ</span>
     <h2>Сайт зроблено добре — але повільний на телефоні</h2>
@@ -132,38 +131,73 @@
   </div>
 
   <div class="spotlight an">
-    <div class="gauge fire">5,7<small>секунди на телефоні</small></div>
+    <div class="gauge fire">6,6<small>секунди на телефоні</small></div>
     <div class="txt">
       <h3>Стільки чекає відвідувач зі смартфона</h3>
       <p>Поки з'явиться головний вміст сторінки. Комфортна межа — <b>до 3 секунд</b>. Кожна зайва секунда = покупці, які закривають вкладку.</p>
     </div>
   </div>
 
-  <h4 class="sec">⚡ Детальні показники швидкості</h4>
-  <div class="sec-sub">Шість ключових метрик Google. <i>📱</i> телефон · <i>💻</i> комп'ютер.</div>
-  <div class="grid3">
-    <div class="m"><div class="name">Головний контент</div><div class="duo"><span class="leg"><i>📱</i><span class="num">5,7 с</span><span class="dot r"></span></span><span class="leg"><i>💻</i><span class="num">1,1 с</span><span class="dot g"></span></span></div><div class="norm">норма: до 2,5 с</div></div>
-    <div class="m"><div class="name">Перша поява</div><div class="duo"><span class="leg"><i>📱</i><span class="num">3,8 с</span><span class="dot r"></span></span><span class="leg"><i>💻</i><span class="num">0,9 с</span><span class="dot g"></span></span></div><div class="norm">норма: до 1,8 с</div></div>
-    <div class="m"><div class="name">Візуальне заповнення</div><div class="duo"><span class="leg"><i>📱</i><span class="num">4,4 с</span><span class="dot a"></span></span><span class="leg"><i>💻</i><span class="num">1,4 с</span><span class="dot g"></span></span></div><div class="norm">норма: до 3,4 с</div></div>
-    <div class="m"><div class="name">Готовність до дій</div><div class="duo"><span class="leg"><i>📱</i><span class="num">8,9 с</span><span class="dot r"></span></span><span class="leg"><i>💻</i><span class="num">1,8 с</span><span class="dot g"></span></span></div><div class="norm">норма: до 3,8 с</div></div>
-    <div class="m"><div class="name">Реакція на дотик</div><div class="duo"><span class="leg"><i>📱</i><span class="num">118 мс</span><span class="dot g"></span></span><span class="leg"><i>💻</i><span class="num">33 мс</span><span class="dot g"></span></span></div><div class="norm">норма: до 200 мс</div></div>
-    <div class="m"><div class="name">Стабільність верстки</div><div class="duo"><span class="leg"><i>📱</i><span class="num">0,16</span><span class="dot a"></span></span><span class="leg"><i>💻</i><span class="num">0,34</span><span class="dot r"></span></span></div><div class="norm">норма: до 0,1</div></div>
+  <!-- ДЕТАЛІ З ПЕРЕМИКАЧЕМ -->
+  <h4 class="sec">📊 Детальні показники</h4>
+  <div class="sec-sub">Оцінки та швидкість окремо для телефону й комп'ютера — перемкніть.</div>
+  <div class="tabwrap">
+    <div class="tabs">
+      <button class="tab active" data-p="m">📱 Телефон</button>
+      <button class="tab" data-p="d">💻 Комп'ютер</button>
+    </div>
   </div>
 
+  <!-- ПАНЕЛЬ: ТЕЛЕФОН -->
+  <div class="pane active" id="pane-m">
+    <div class="strip">
+      <div class="chip"><div class="n" style="color:#e3a008">71</div><div class="t">ШВИДКІСТЬ</div></div>
+      <div class="chip"><div class="n" style="color:#3fb950">93</div><div class="t">ЗРУЧНІСТЬ</div></div>
+      <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">GOOGLE SEO</div></div>
+      <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">ЯКІСТЬ</div></div>
+    </div>
+    <div class="grid3">
+      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot r"></span></div><div class="val">6,6 с</div><div class="norm">норма: до 2,5 с</div></div>
+      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot a"></span></div><div class="val">2,7 с</div><div class="norm">норма: до 1,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot a"></span></div><div class="val">3,8 с</div><div class="norm">норма: до 3,4 с</div></div>
+      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot r"></span></div><div class="val">8,8 с</div><div class="norm">норма: до 3,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">74 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
+    </div>
+  </div>
+
+  <!-- ПАНЕЛЬ: КОМП'ЮТЕР -->
+  <div class="pane" id="pane-d">
+    <div class="strip">
+      <div class="chip"><div class="n" style="color:#3fb950">95</div><div class="t">ШВИДКІСТЬ</div></div>
+      <div class="chip"><div class="n" style="color:#3fb950">95</div><div class="t">ЗРУЧНІСТЬ</div></div>
+      <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">GOOGLE SEO</div></div>
+      <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">ЯКІСТЬ</div></div>
+    </div>
+    <div class="grid3">
+      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot g"></span></div><div class="val">1,3 с</div><div class="norm">норма: до 2,5 с</div></div>
+      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot g"></span></div><div class="val">0,7 с</div><div class="norm">норма: до 1,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot g"></span></div><div class="val">1,4 с</div><div class="norm">норма: до 3,4 с</div></div>
+      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot g"></span></div><div class="val">1,8 с</div><div class="norm">норма: до 3,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">71 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
+    </div>
+  </div>
+
+  <!-- ОСОБЛИВОСТІ -->
   <h4 class="sec">🔧 Що всередині сайту</h4>
-  <div class="sec-sub">Технічні характеристики, що впливають на швидкість (заміри з мобільної версії).</div>
+  <div class="sec-sub">Технічні характеристики, що впливають на швидкість.</div>
   <div class="diag">
     <div class="d"><div class="dnum">1,3 МБ</div><div class="dl">вага сторінки</div></div>
     <div class="d"><div class="dnum">54</div><div class="dl">звернень до сервера</div></div>
     <div class="d"><div class="dnum" style="color:#3fb950">0,1 с</div><div class="dl">відповідь сервера</div></div>
-    <div class="d"><div class="dnum">0,5 с</div><div class="dl">завантаження скриптів</div></div>
+    <div class="d"><div class="dnum">0,4 с</div><div class="dl">завантаження скриптів</div></div>
   </div>
 
-  <h4 class="sec">💬 Що це означає для вашого бізнесу</h4>
+  <h4 class="sec">💬 Що це означає для бізнесу</h4>
   <div class="mean">
     <div class="row"><div class="ic">📱</div><div><b>Більшість покупців — зі смартфона</b><span>А саме там швидкість найважливіша: повільна сторінка = втрачені відвідувачі.</span></div></div>
     <div class="row"><div class="ic">📉</div><div><b>Повільність = втрачені продажі</b><span>За даними Google, затримка з 1 до 3 секунд підвищує ймовірність відмови на ~32%.</span></div></div>
-    <div class="row"><div class="ic">🧱</div><div><b>Верстка трохи «стрибає» під час завантаження</b><span>Користувач промахується по кнопках — дрібниця, що дратує саме на телефоні.</span></div></div>
     <div class="row"><div class="ic">✅</div><div><b>Добра новина: фундамент здоровий</b><span>Видимість і якість на висоті. Виправляється точково, без переробки сайту й зміни платформи.</span></div></div>
   </div>
 
@@ -184,5 +218,15 @@
   </footer>
 
 </div>
+<script>
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+      document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('active')});
+      t.classList.add('active');
+      document.getElementById('pane-'+t.dataset.p).classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>

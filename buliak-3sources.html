@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Буляк — перевірка з 3 джерел · Кузня</title>
+<style>
+  :root{--bg:#0c0b0f;--bg2:#15131a;--card:#1a1822;--card2:#211e2b;--line:#2b2833;--txt:#f3f0ea;--muted:#a09aae;--fire1:#ff7a18;--fire2:#ff3d2e;--gold:#f5a623;--green:#3fb950;--amber:#e3a008;--red:#f85149;--blue:#539bf5;--r:18px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(1200px 600px at 50% -200px,#241a14 0%,var(--bg) 55%);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;padding:0 18px 80px}
+  .wrap{max-width:880px;margin:0 auto}
+  .fire{background:linear-gradient(100deg,var(--gold),var(--fire1) 55%,var(--fire2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  header{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;font-size:18px}
+  .anvil{width:26px;height:26px;filter:drop-shadow(0 0 8px rgba(255,122,24,.5))}
+  .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+  .hero{text-align:center;padding:44px 0 18px}
+  .kicker{text-transform:uppercase;letter-spacing:3px;font-size:12px;color:var(--gold);margin-bottom:12px}
+  h1{font-size:clamp(27px,5vw,40px);font-weight:850;line-height:1.1;letter-spacing:-.5px}
+  .sub{margin-top:14px;color:var(--muted);font-size:15px}
+  .intro{background:linear-gradient(180deg,var(--bg2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;margin-top:22px;text-align:center;color:var(--muted);font-size:15px}
+  .intro b{color:var(--txt)}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin:38px 0 16px;font-weight:700;text-align:center}
+  .srcs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .src{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;border-top:3px solid var(--line)}
+  .src.ps{border-top-color:var(--fire1)}
+  .src.ss{border-top-color:var(--blue)}
+  .src.cx{border-top-color:var(--green)}
+  .src .nm{font-weight:800;font-size:15px}
+  .src .meth{font-size:12px;color:var(--muted);margin:4px 0 14px;min-height:48px}
+  .src .row{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+  .src .row span{color:var(--muted)}
+  .src .row b{color:var(--txt);font-size:15px}
+  .src .nodata{color:#6f6a7d;text-align:center;padding:20px 0;font-size:13.5px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:6px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);font-size:14px}
+  th{background:var(--card2);color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+  tr:last-child td{border-bottom:0}
+  td b{color:var(--txt)}
+  .ps-c{color:var(--fire1)}.ss-c{color:var(--blue)}.cx-c{color:var(--green)}
+  .why{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 4px;margin-top:6px}
+  .why .row{display:flex;gap:14px;padding:15px 20px;border-bottom:1px solid var(--line)}
+  .why .row:last-child{border-bottom:0}
+  .why .ic{font-size:20px;flex-shrink:0}
+  .why b{display:block;margin-bottom:2px}
+  .why span{color:var(--muted);font-size:14px}
+  .verdict{background:linear-gradient(180deg,var(--bg2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-top:14px;font-size:15px}
+  .verdict b{color:var(--gold)}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
+  footer a{color:var(--gold);text-decoration:none}
+  @media(max-width:680px){.srcs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg class="anvil" viewBox="0 0 24 24" fill="none"><path d="M3 8h12c0 2-1.5 3-3 3.5L13 14h2l1 3H6l1-3h2l.8-2.2C6 11 4 10 3 8z" fill="url(#g)"/><rect x="8" y="18" width="8" height="2.5" rx="1" fill="#7a7488"/><defs><linearGradient id="g" x1="3" y1="8" x2="16" y2="17"><stop stop-color="#f5a623"/><stop offset="1" stop-color="#ff3d2e"/></linearGradient></defs></svg>
+      <span>КУЗНЯ</span>
+    </div>
+    <span class="tag">Експеримент · 3 джерела</span>
+  </header>
+
+  <section class="hero">
+    <div class="kicker">Перехресна перевірка швидкості</div>
+    <h1>Буляк очима <span class="fire">3 рушіїв</span></h1>
+    <div class="sub">buliak.com · 21 червня 2026 · телефон (mobile)</div>
+  </section>
+
+  <div class="intro">
+    Один і той самий сайт — <b>три незалежні інструменти</b>. Цифри сильно різняться, бо кожен міряє в <b>своїх умовах</b> (швидкість мережі, потужність телефону, реальні чи емульовані дані). Це й показує, чому <b>не можна вірити одній цифрі</b>.
+  </div>
+
+  <h2>📐 Три джерела</h2>
+  <div class="srcs">
+    <div class="src ps">
+      <div class="nm fire">⚡ Google PageSpeed</div>
+      <div class="meth">Lighthouse у лабораторії. Емулює <b>слабкий телефон + повільну 4G</b> — навмисно найгірший випадок.</div>
+      <div class="row"><span>Головний контент</span><b>9,8 с</b></div>
+      <div class="row"><span>Перша поява</span><b>4,7 с</b></div>
+      <div class="row"><span>Стабільність</span><b>0,16</b></div>
+      <div class="row"><span>Запитів</span><b>54</b></div>
+    </div>
+    <div class="src ss">
+      <div class="nm" style="color:var(--blue)">🔬 Sitespeed.io</div>
+      <div class="meth">Наш власний рушій (Chrome). Реальніший телефон, <b>нормальна мережа</b>, 3 прогони усереднено.</div>
+      <div class="row"><span>Головний контент</span><b>0,94 с</b></div>
+      <div class="row"><span>Перша поява</span><b>0,92 с</b></div>
+      <div class="row"><span>Стабільність</span><b>0,00</b></div>
+      <div class="row"><span>Запитів</span><b>38</b></div>
+    </div>
+    <div class="src cx">
+      <div class="nm" style="color:var(--green)">👥 Google CrUX</div>
+      <div class="meth">Реальні дані живих відвідувачів Chrome за 28 днів.</div>
+      <div class="nodata">📭 Недостатньо реальних даних<br><br>Замало відвідувачів для статистики (для малих сайтів — норма)</div>
+    </div>
+  </div>
+
+  <h2>📊 Поряд: де розбіжність</h2>
+  <table>
+    <tr><th>Показник</th><th class="ps-c">PageSpeed</th><th class="ss-c">Sitespeed</th><th class="cx-c">CrUX</th></tr>
+    <tr><td><b>Головний контент (LCP)</b></td><td class="ps-c">9,8 с</td><td class="ss-c">0,94 с</td><td>—</td></tr>
+    <tr><td><b>Перша поява (FCP)</b></td><td class="ps-c">4,7 с</td><td class="ss-c">0,92 с</td><td>—</td></tr>
+    <tr><td><b>Стабільність (CLS)</b></td><td class="ps-c">0,16</td><td class="ss-c">0,00</td><td>—</td></tr>
+  </table>
+
+  <h2>🤔 Чому такий розрив</h2>
+  <div class="why">
+    <div class="row"><div class="ic">🐌</div><div><b>PageSpeed навмисно жорсткий</b><span>Емулює слабкий телефон Moto G4 + повільну 4G. Це «найгірший можливий» сценарій, не середній.</span></div></div>
+    <div class="row"><div class="ic">⚡</div><div><b>Sitespeed — ближче до нормальних умов</b><span>Сучасний Chrome, нормальна мережа. Так сайт бачить більшість користувачів з добрим інтернетом.</span></div></div>
+    <div class="row"><div class="ic">👥</div><div><b>CrUX — єдині «справжні» дані</b><span>Але лише для сайтів з трафіком. Буляк ще малий — статистики нема.</span></div></div>
+  </div>
+
+  <h2>🎯 Висновок</h2>
+  <div class="verdict">
+    Реальна швидкість Буляка — <b>десь між</b> цими цифрами, ближче до Sitespeed для користувачів з нормальним інтернетом, ближче до PageSpeed для тих, хто на слабкому телефоні в дорозі.
+    <br><br>Саме тому ми дивимось <b>кілька джерел</b>: одна цифра вводить в оману, а разом вони дають чесний контекст. Для рішень орієнтуємось на діапазон, а не на одне число.
+  </div>
+
+  <footer>
+    <div><b class="fire">КУЗНЯ</b> · експеримент крос-валідації · <a href="https://kuznya.studio">kuznya.studio</a></div>
+  </footer>
+</div>
+</body>
+</html>

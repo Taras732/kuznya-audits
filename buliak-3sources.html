@@ -77,18 +77,18 @@
     <div class="src ps">
       <div class="nm fire">⚡ Google PageSpeed</div>
       <div class="meth">Lighthouse у лабораторії. Емулює <b>слабкий телефон + повільну 4G</b> — навмисно найгірший випадок.</div>
-      <div class="row"><span>Головний контент</span><b>9,8 с</b></div>
-      <div class="row"><span>Перша поява</span><b>4,7 с</b></div>
-      <div class="row"><span>Стабільність</span><b>0,16</b></div>
+      <div class="row"><span>Головний контент</span><b>📱 9,8с · 💻 1,3с</b></div>
+      <div class="row"><span>Перша поява</span><b>📱 4,7с · 💻 0,7с</b></div>
+      <div class="row"><span>Стабільність</span><b>📱 0,16 · 💻 0</b></div>
       <div class="row"><span>Запитів</span><b>54</b></div>
     </div>
     <div class="src ss">
       <div class="nm" style="color:var(--blue)">🔬 Sitespeed.io</div>
       <div class="meth">Наш власний рушій (Chrome). Реальніший телефон, <b>нормальна мережа</b>, 3 прогони усереднено.</div>
-      <div class="row"><span>Головний контент</span><b>0,94 с</b></div>
-      <div class="row"><span>Перша поява</span><b>0,92 с</b></div>
-      <div class="row"><span>Стабільність</span><b>0,00</b></div>
-      <div class="row"><span>Запитів</span><b>38</b></div>
+      <div class="row"><span>Головний контент</span><b>📱 0,94с · 💻 0,75с</b></div>
+      <div class="row"><span>Перша поява</span><b>📱 0,92с · 💻 0,75с</b></div>
+      <div class="row"><span>Стабільність</span><b>📱 0 · 💻 0,33</b></div>
+      <div class="row"><span>Запитів</span><b>📱 38 · 💻 56</b></div>
     </div>
     <div class="src cx">
       <div class="nm" style="color:var(--green)">👥 Google CrUX</div>
@@ -97,13 +97,15 @@
     </div>
   </div>
 
-  <h2>📊 Поряд: де розбіжність</h2>
+  <h2>📱 проти 💻 — головний контент (LCP)</h2>
   <table>
-    <tr><th>Показник</th><th class="ps-c">PageSpeed</th><th class="ss-c">Sitespeed</th><th class="cx-c">CrUX</th></tr>
-    <tr><td><b>Головний контент (LCP)</b></td><td class="ps-c">9,8 с</td><td class="ss-c">0,94 с</td><td>—</td></tr>
-    <tr><td><b>Перша поява (FCP)</b></td><td class="ps-c">4,7 с</td><td class="ss-c">0,92 с</td><td>—</td></tr>
-    <tr><td><b>Стабільність (CLS)</b></td><td class="ps-c">0,16</td><td class="ss-c">0,00</td><td>—</td></tr>
+    <tr><th>Рушій</th><th>📱 Телефон</th><th>💻 Комп'ютер</th><th>Розрив</th></tr>
+    <tr><td><b class="ps-c">PageSpeed</b> <span style="color:var(--muted);font-size:12px">(жорстка 4G)</span></td><td class="ps-c"><b>9,8 с</b></td><td>1,3 с</td><td><b class="r">×7,5</b></td></tr>
+    <tr><td><b class="ss-c">Sitespeed</b> <span style="color:var(--muted);font-size:12px">(норм. мережа)</span></td><td class="ss-c"><b>0,94 с</b></td><td>0,75 с</td><td class="g">майже однаково</td></tr>
   </table>
+  <div class="note" style="background:rgba(83,155,245,.08);border:1px solid rgba(83,155,245,.25);border-radius:14px;padding:16px 18px;margin-top:14px;font-size:14px;color:#cfe0f5">
+    💡 <b>Ось де ключ:</b> у PageSpeed телефон у 7,5 раза повільніший за комп'ютер — але це <b>не вага сайту</b>, а штучна «погана 4G». На нормальному інтернеті (Sitespeed) телефон і комп'ютер <b>майже однакові</b> (0,94с vs 0,75с). Тобто Буляк на телефоні швидкий — для тих, у кого нормальний зв'язок.
+  </div>
 
   <h2>🤔 Чому такий розрив</h2>
   <div class="why">

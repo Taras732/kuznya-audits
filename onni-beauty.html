@@ -143,9 +143,13 @@
   .print-btn:hover{transform:translateY(-2px)}
   @media print{
     .no-print{display:none!important}
+    header{display:none!important}
     @page{size:A4;margin:11mm}
     *{opacity:1!important;animation:none!important;transform:none!important;visibility:visible!important}
     body{background:#0c0b0f!important;padding:0}
+    /* кожна головна секція — з нової сторінки (консистентний розподіл) */
+    .pb{page-break-before:always!important}
+    .hero{padding:0 0 14px;page-break-after:avoid}
     .wrap{max-width:100%}
     .pane{display:block!important}
     .tabwrap{display:none!important}
@@ -193,7 +197,7 @@
   </div>
 
   <div class="spotlight an">
-    <div class="gauge fire">4,6<small>секунди на телефоні</small></div>
+    <div class="gauge fire">4,7<small>секунди на телефоні</small></div>
     <div class="txt">
       <h3>Стільки чекає відвідувач зі смартфона</h3>
       <p>Поки з'явиться головний вміст сторінки. Комфортна межа — <b>до 3 секунд</b>. Кожна зайва секунда = покупці, які закривають вкладку.</p>
@@ -201,7 +205,7 @@
   </div>
 
   <!-- ДЕТАЛІ З ПЕРЕМИКАЧЕМ -->
-  <h4 class="sec">📊 Детальні показники</h4>
+  <h4 class="sec pb">📊 Детальні показники</h4>
   <div class="sec-sub">Оцінки та швидкість окремо для телефону й комп'ютера — перемкніть.</div>
   <div class="tabwrap">
     <div class="tabs">
@@ -219,11 +223,11 @@
       <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">ЯКІСТЬ</div></div>
     </div>
     <div class="grid3">
-      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot r"></span></div><div class="val">4,6 с</div><div class="norm">норма: до 2,5 с</div></div>
-      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot r"></span></div><div class="val">3,6 с</div><div class="norm">норма: до 1,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot a"></span></div><div class="val">3,6 с</div><div class="norm">норма: до 3,4 с</div></div>
-      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot a"></span></div><div class="val">4,6 с</div><div class="norm">норма: до 3,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">59 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot r"></span></div><div class="val">4,7 с</div><div class="norm">норма: до 2,5 с</div></div>
+      <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot r"></span></div><div class="val">3,5 с</div><div class="norm">норма: до 1,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot a"></span></div><div class="val">3,5 с</div><div class="norm">норма: до 3,4 с</div></div>
+      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot a"></span></div><div class="val">4,7 с</div><div class="norm">норма: до 3,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">7 мс</div><div class="norm">норма: до 200 мс</div></div>
       <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
     </div>
   </div>
@@ -231,7 +235,7 @@
   <!-- ПАНЕЛЬ: КОМП'ЮТЕР -->
   <div class="pane" id="pane-d">
     <div class="strip">
-      <div class="chip"><div class="n" style="color:#3fb950">99</div><div class="t">ШВИДКІСТЬ</div></div>
+      <div class="chip"><div class="n" style="color:#3fb950">98</div><div class="t">ШВИДКІСТЬ</div></div>
       <div class="chip"><div class="n" style="color:#3fb950">93</div><div class="t">ЗРУЧНІСТЬ</div></div>
       <div class="chip"><div class="n" style="color:#3fb950">92</div><div class="t">GOOGLE SEO</div></div>
       <div class="chip"><div class="n" style="color:#3fb950">100</div><div class="t">ЯКІСТЬ</div></div>
@@ -240,14 +244,14 @@
       <div class="m"><div class="top"><span class="name">Головний контент</span><span class="dot g"></span></div><div class="val">0,9 с</div><div class="norm">норма: до 2,5 с</div></div>
       <div class="m"><div class="top"><span class="name">Перша поява</span><span class="dot g"></span></div><div class="val">0,8 с</div><div class="norm">норма: до 1,8 с</div></div>
       <div class="m"><div class="top"><span class="name">Візуальне заповнення</span><span class="dot g"></span></div><div class="val">0,8 с</div><div class="norm">норма: до 3,4 с</div></div>
-      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot g"></span></div><div class="val">0,9 с</div><div class="norm">норма: до 3,8 с</div></div>
-      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">0 мс</div><div class="norm">норма: до 200 мс</div></div>
+      <div class="m"><div class="top"><span class="name">Готовність до дій</span><span class="dot g"></span></div><div class="val">1,0 с</div><div class="norm">норма: до 3,8 с</div></div>
+      <div class="m"><div class="top"><span class="name">Реакція на дотик</span><span class="dot g"></span></div><div class="val">25 мс</div><div class="norm">норма: до 200 мс</div></div>
       <div class="m"><div class="top"><span class="name">Стабільність верстки</span><span class="dot g"></span></div><div class="val">0,00</div><div class="norm">норма: до 0,1</div></div>
     </div>
   </div>
 
   <!-- ОСОБЛИВОСТІ -->
-  <h4 class="sec">📖 Що означає кожен показник</h4>
+  <h4 class="sec pb">📖 Що означає кожен показник</h4>
   <div class="sec-sub">Коротко, людською мовою — щоб цифри вище були зрозумілі.</div>
   <div class="mean">
     <div class="row"><div class="ic">🖼️</div><div><b>Головний контент (LCP)</b><span>Коли з'являється найбільший елемент сторінки (фото/банер). Головний показник «швидко відкрився чи ні».</span></div></div>
@@ -257,7 +261,7 @@
   </div>
 
   <h4 class="sec">🎯 Скільки треба досягти</h4>
-  <div class="verdict-goal"><b>Норма Google (ціль):</b> головний контент — за <b>≤ 2,5 с</b>, перша поява — за <b>≤ 1,8 с</b>, без стрибків верстки (CLS <b>≤ 0,1</b>).<br><br><b>Ваш сайт на телефоні:</b> головний контент за <b>4,6 с</b> — є куди рости.<br><br>Орієнтир — <b>зелена зона Google</b>. До неї варто тягнутись: швидкість прямо впливає на те, скільки відвідувачів стають покупцями.</div>
+  <div class="verdict-goal"><b>Норма Google (ціль):</b> головний контент — за <b>≤ 2,5 с</b>, перша поява — за <b>≤ 1,8 с</b>, без стрибків верстки (CLS <b>≤ 0,1</b>).<br><br><b>Ваш сайт на телефоні:</b> головний контент за <b>4,7 с</b> — є куди рости.<br><br>Орієнтир — <b>зелена зона Google</b>. До неї варто тягнутись: швидкість прямо впливає на те, скільки відвідувачів стають покупцями.</div>
 
   <h4 class="sec">🔧 Що всередині сайту</h4>
   <div class="sec-sub">Технічні характеристики, що впливають на швидкість.</div>
@@ -265,10 +269,10 @@
     <div class="d"><div class="dnum">1,2 МБ</div><div class="dl">вага сторінки</div></div>
     <div class="d"><div class="dnum">21</div><div class="dl">звернень до сервера</div></div>
     <div class="d"><div class="dnum" style="color:#3fb950">0,0 с</div><div class="dl">відповідь сервера</div></div>
-    <div class="d"><div class="dnum">0,2 с</div><div class="dl">завантаження скриптів</div></div>
+    <div class="d"><div class="dnum">0,1 с</div><div class="dl">завантаження скриптів</div></div>
   </div>
 
-  <h4 class="sec">💬 Що це означає для бізнесу</h4>
+  <h4 class="sec pb">💬 Що це означає для бізнесу</h4>
   <div class="mean">
     <div class="row"><div class="ic">📱</div><div><b>Більшість покупців — зі смартфона</b><span>А саме там швидкість найважливіша: повільна сторінка = втрачені відвідувачі.</span></div></div>
     <div class="row"><div class="ic">📉</div><div><b>Повільність = втрачені продажі</b><span>За даними Google, затримка з 1 до 3 секунд підвищує ймовірність відмови на ~32%.</span></div></div>
